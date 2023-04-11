@@ -1,0 +1,6 @@
+    <mat-form-field appearance="outline">
+      <mat-label>Your Date of birth</mat-label>
+      <input matInput [matDatepicker]="picker" [formControl]="dob">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>

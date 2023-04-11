@@ -1,0 +1,38 @@
+.calendar {
+  @apply flex;
+  @apply w-full h-full;
+  &__container {
+    @apply flex gap-1;
+    @apply flex-col;
+    @apply w-full h-full;
+    @apply justify-center;
+    @apply items-center relative;
+    @apply p-5 py-10 mt-5;
+    @apply before:content-['Week_of_the_year->'] before:opacity-25 before:absolute  before:z-10  before:leading-[0] before:left-5 before:top-0  before:text-center before:text-black text-3xl;
+    @apply after:content-['<-Age'] after:opacity-25 after:absolute after:-left-[50px] after:top-20 after:-translate-y-1/2 after:z-10  after:leading-[0] after:text-center after:text-black text-3xl after:-rotate-90;
+  }
+  &__year {
+    @apply flex gap-1 relative;
+    @apply w-fit;
+    &__count{
+      @apply absolute w-[2ch] h-full text-right -left-[15px] top-1/2 -translate-y-[80%] text-xs font-bold;
+    }
+  }
+  &__week {
+    @apply flex justify-center items-center relative;
+    @apply w-3 h-3;
+    @apply font-caveat;
+    @apply border border-black border-collapse;
+    &.has-completed {
+      @apply bg-red-500 border-red-400;
+      // @apply before:content-['x'] before:absolute  before:z-10 before:w-full before:h-full before:leading-[0] before:left-1/2 before:top-1/2 before:-translate-x-[70%] before:-translate-y-1/2 before:text-center before:text-black text-3xl;
+    }
+    &.is-current {
+      @apply bg-blue-500 border-blue-400;
+    }
+    &__count{
+      @apply font-roboto;
+      @apply absolute w-[2ch] h-full text-center left-1/2 -top-[15px] -translate-x-[50%] text-xs font-bold;
+    }
+  }
+}

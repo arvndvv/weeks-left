@@ -1,0 +1,21 @@
+<div class="calendar">
+  <div class="calendar__container">
+    <ul class="calendar__year" *ngFor="let year of units; let yearIndex=index">
+      <span class="calendar__year__count" *ngIf="yearIndex === 0 || (yearIndex+1) % 5 === 0">{{
+        yearIndex === 0 ? 1 : yearIndex+1
+      }}</span>
+        <li
+          class="calendar__week"
+          *ngFor="let week of year;let weekIndex = index"
+          [ngClass]="{
+            'has-completed': week.isCompleted,
+            'is-current': week.isCurrent
+          }"
+        >
+       <span class="calendar__week__count" *ngIf="yearIndex === 0 && (weekIndex+1)%5===0">{{
+        weekIndex === 0 ? 1 : weekIndex+1
+      }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
