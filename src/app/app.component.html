@@ -3,7 +3,7 @@
   <div class="container m-auto justify-center items-center flex pt-5 flex-col">
     <span *ngIf="showLoader">Loading</span>
     <!-- <date-picker [formControl]="dob" ngDefaultControl></date-picker> -->
-    <mat-form-field appearance="outline" [formControl]="dob">
+    <mat-form-field appearance="outline">
       <mat-label>Your Date of birth</mat-label>
       <input matInput [matDatepicker]="picker" [formControl]="dob">
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
